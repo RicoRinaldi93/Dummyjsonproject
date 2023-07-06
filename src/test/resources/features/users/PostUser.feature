@@ -5,7 +5,7 @@ Feature: Add user
     Given Add user with valid json
     When Post user request
     Then Should return status code 200
-    And Response body should contain "<firstName>" as firstName and "<lastName>" as lastName
+    And Response body should contain "<firstName>" as first Name and "<lastName>" as lastName
     And Validate json schema success add user
     Examples:
       | firstName | lastName |

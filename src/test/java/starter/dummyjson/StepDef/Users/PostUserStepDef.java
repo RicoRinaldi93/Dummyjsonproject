@@ -27,7 +27,7 @@ public class PostUserStepDef {
         SerenityRest.when().post(UserApi.POST_USER);
     }
 
-    @And("Response body should contain {string} as firstName and {string} as lastName")
+    @And("Response body should contain {string} as first Name and {string} as lastName")
     public void responseBodyShouldContainAsFirstNameAndAsLastName(String firstName, String lastName) {
         SerenityRest.then()
                 .body("firstName", equalTo(firstName))

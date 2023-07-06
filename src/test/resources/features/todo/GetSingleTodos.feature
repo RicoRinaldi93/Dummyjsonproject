@@ -6,6 +6,6 @@ Feature: Get Single Todo
     And Validate JSON schema single todos
 
   Scenario: Get single todo with invalid parameter id todo API
-    Given Get single todos with invalid id "xyzz"
+    Given Get single todos with invalid id "1.1"
     When Send request get single todos
     Then Should return status code 404

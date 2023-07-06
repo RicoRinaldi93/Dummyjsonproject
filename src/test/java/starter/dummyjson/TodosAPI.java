@@ -3,7 +3,6 @@ package starter.dummyjson;
 import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.Steps;
 import starter.dummyjson.Utils.Constant;
 
 import java.io.File;
@@ -24,11 +23,12 @@ public class TodosAPI {
     }
 
     @Step("Delete todos with invalid id")
-    public void deleteTodosValidId(int id) {
-        SerenityRest.given().pathParam("id",id);
+        public void deleteTodosValidId(int id) {
+            SerenityRest.given()
+                    .pathParam("id",id);
     }
 
-    @Step("Delete todos with unavalaible id")
+    @Step("Delete todos with unavailable id")
     public void deleteTodosUnavalaibleId(String id) {
         SerenityRest.given().pathParam("id", id);
     }
@@ -52,8 +52,4 @@ public class TodosAPI {
                 .pathParam("id", id)
                 .contentType(ContentType.JSON).body(json);
     }
-
-
-
-
 }
